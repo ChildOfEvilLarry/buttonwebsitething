@@ -8,6 +8,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Show only the selected section
+    const shellSection = document.getElementById('shellshockers');
+    if (shellSection) {
+        shellSection.classList.add('hidden-section');
+    }
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#shellshockers') {
+                e.preventDefault();
+                document.querySelectorAll('main section').forEach(sec => {
+                    sec.classList.add('hidden-section');
+                });
+                shellSection.classList.remove('hidden-section');
+            } else if (this.getAttribute('href').startsWith('#')) {
+                document.querySelectorAll('main section').forEach(sec => {
+                    sec.classList.add('hidden-section');
+                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.classList.remove('hidden-section');
+            }
+        });
+    });
+
     // Counter logic
     let counter = 0;
     const counterValue = document.getElementById('counter-value');
@@ -37,4 +60,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
+
