@@ -24,4 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
             counterValue.textContent = counter;
         });
     }
+
+    // Dark mode toggle
+    const darkModeBtn = document.getElementById('dark-mode-toggle');
+    if (darkModeBtn) {
+        darkModeBtn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeBtn.textContent = 'Light Mode';
+            } else {
+                darkModeBtn.textContent = 'Dark Mode';
+            }
+        });
+    }
 });
