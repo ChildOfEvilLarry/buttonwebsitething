@@ -4,6 +4,13 @@ body {
     padding: 0;
     background: #f4f4f4;
     color: #222;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background: #181818;
+    color: #f4f4f4;
+}
 }
 
 header {
@@ -11,6 +18,12 @@ header {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode header {
+    background: #222;
+    color: #fff;
 }
 
 nav ul {
@@ -35,6 +48,12 @@ main {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode main {
+    background: #232323;
+    color: #f4f4f4;
 }
 
 section {
@@ -49,4 +68,30 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode footer {
+    background: #111;
+    color: #f4f4f4;
+}
+
+/* Dark mode button styling */
+#dark-mode-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background: #f4f4f4;
+    color: #222;
 }
